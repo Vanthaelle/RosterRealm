@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roster Realm </title>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Roster Realm</h1>
+  <p>Student Details Library Blazing</p>
+</header>
+
+<div class="library-container">
+  <table id="studentTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Class</th>
+        <th>Age</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jusrylle</td>
+        <td>BSCpE-3B</td>
+        <td>20</td>
+        <td>Perfect</td>
+      </tr>
+      <tr>
+        <td>Vantha</td>
+        <td>BSCpE-3B</td>
+        <td>20</td>
+        <td>Inaantok</td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="add-student">+ Add Student</button>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h2>Add Student</h2>
+    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="class" placeholder="Class">
+    <input type="number" id="age" placeholder="Age">
+    <input type="text" id="notes" placeholder="Notes">
+    <div>
+      <button class="save-btn">Save</button>
+      <button class="cancel-btn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; VANTHA
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

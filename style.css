@@ -1,0 +1,170 @@
+:root {
+  --bg: #000000;
+  --red: #ff1f1f;
+  --orange: #ff8000;
+  --yellow: #ffea00;
+  --white: #ffffff;
+  --panel: rgba(255,255,255,0.05);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+header h1 {
+  font-family: 'Russo One', sans-serif;
+  font-size: 3rem;
+  background: linear-gradient(90deg, var(--red), var(--orange), var(--yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px var(--red), 0 0 25px var(--orange);
+}
+
+header p {
+  font-size: 1.2rem;
+  color: var(--yellow);
+  margin-top: 10px;
+  opacity: 0.9;
+  text-shadow: 0 0 10px var(--orange);
+}
+
+.library-container {
+  width: 100%;
+  max-width: 900px;
+  background: rgba(0,0,0,0.85);
+  border-radius: 20px;
+  padding: 30px 20px;
+  box-shadow: 0 10px 30px rgba(255,140,0,0.2);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead tr {
+  color: var(--orange);
+  border-bottom: 2px solid var(--red);
+  text-align: left;
+}
+
+thead th, tbody td {
+  padding: 14px 15px;
+}
+
+tbody tr {
+  background: rgba(255,69,0,0.05);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--red), 0 0 30px var(--orange);
+}
+
+tbody tr:nth-child(even) { background: rgba(255,140,0,0.05); }
+
+button.add-student {
+  margin-top: 25px;
+  padding: 14px 25px;
+  font-size: 1rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--red), var(--orange), var(--yellow));
+  color: var(--black);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-shadow: 0 0 5px #000;
+  transition: all 0.2s ease;
+  box-shadow: 0 5px 15px rgba(255,69,0,0.4);
+}
+
+button.add-student:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px var(--red), 0 0 35px var(--orange);
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal.active { display: flex; }
+
+.modal-content {
+  background: rgba(30,30,30,0.95);
+  padding: 30px 25px;
+  border-radius: 20px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(255,140,0,0.3);
+  text-align: center;
+  border: 2px solid var(--red);
+}
+
+.modal-content h2 {
+  color: var(--orange);
+  margin-bottom: 20px;
+  text-shadow: 0 0 8px var(--red);
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--orange);
+  font-size: 1rem;
+  background: rgba(0,0,0,0.6);
+  color: var(--white);
+}
+
+.modal-content button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 5px;
+}
+
+button.save-btn { 
+  background: var(--yellow); 
+  color: #000; 
+  text-shadow: 0 0 5px #000;
+}
+button.cancel-btn { 
+  background: var(--red); 
+  color: #fff; 
+  text-shadow: 0 0 5px #000;
+}
+
+footer {
+  margin-top: 50px;
+  font-size: 0.85rem;
+  color: var(--orange);
+  text-align: center;
+  opacity: 0.9;
+}

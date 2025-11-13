@@ -20,6 +20,8 @@ body {
   padding: 40px 20px;
 }
 
+/* ---------------- HEADER ---------------- */
+
 header {
   text-align: center;
   margin-bottom: 50px;
@@ -42,6 +44,8 @@ header p {
   text-shadow: 0 0 10px var(--orange);
 }
 
+/* ---------------- CONTAINER ---------------- */
+
 .library-container {
   width: 100%;
   max-width: 900px;
@@ -50,11 +54,15 @@ header p {
   padding: 30px 20px;
   box-shadow: 0 10px 30px rgba(255,140,0,0.2);
   border: 1px solid rgba(255,255,255,0.1);
+  overflow-x: auto; /* FIX: prevents table overlap sa phone */
 }
+
+/* ---------------- TABLE ---------------- */
 
 table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 600px; /* FIX: prevents elements from squeezing too much */
 }
 
 thead tr {
@@ -78,7 +86,11 @@ tbody tr:hover {
   box-shadow: 0 0 20px var(--red), 0 0 30px var(--orange);
 }
 
-tbody tr:nth-child(even) { background: rgba(255,140,0,0.05); }
+tbody tr:nth-child(even) {
+  background: rgba(255,140,0,0.05);
+}
+
+/* ---------------- BUTTON ---------------- */
 
 button.add-student {
   margin-top: 25px;
@@ -86,7 +98,7 @@ button.add-student {
   font-size: 1rem;
   font-weight: 700;
   background: linear-gradient(90deg, var(--red), var(--orange), var(--yellow));
-  color: var(--black);
+  color: #000;
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -100,7 +112,8 @@ button.add-student:hover {
   box-shadow: 0 0 25px var(--red), 0 0 35px var(--orange);
 }
 
-/* Modal styles */
+/* ---------------- MODAL ---------------- */
+
 .modal {
   display: none;
   position: fixed;
@@ -111,7 +124,9 @@ button.add-student:hover {
   z-index: 100;
 }
 
-.modal.active { display: flex; }
+.modal.active {
+  display: flex;
+}
 
 .modal-content {
   background: rgba(30,30,30,0.95);
@@ -155,11 +170,14 @@ button.save-btn {
   color: #000; 
   text-shadow: 0 0 5px #000;
 }
+
 button.cancel-btn { 
   background: var(--red); 
   color: #fff; 
   text-shadow: 0 0 5px #000;
 }
+
+/* ---------------- FOOTER ---------------- */
 
 footer {
   margin-top: 50px;
@@ -167,4 +185,30 @@ footer {
   color: var(--orange);
   text-align: center;
   opacity: 0.9;
+}
+
+/* ---------------- MOBILE FIXES ---------------- */
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .library-container {
+    padding: 20px 10px;
+  }
+
+  th, td {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  button.add-student {
+    width: 100%;
+    font-size: 1rem;
+  }
 }
